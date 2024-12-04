@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my Portfolio</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="shortcut icon" href="https://i.postimg.cc/9fqYVvxh/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+
+        <%- include('partials/sidebar') %>
+
+
+
+            <div class="main-content">
+
+                <nav class="navbar">
+                    <ul class="navbar-list">
+                        <li class="navbar-item"><button class="navbar-link active" data-nav-link>About</button></li>
+                        <li class="navbar-item"><button class="navbar-link" data-nav-link>Resume</button></li>
+                        <li class="navbar-item"><button class="navbar-link" data-nav-link>Portfolio</button></li>
+                        <li class="navbar-item"><button class="navbar-link" data-nav-link>Blog</button></li>
+                        <li class="navbar-item"><button class="navbar-link" data-nav-link>Contact</button></li>
+                    </ul>
+                </nav>
+
+
+                <%- include('partials/about') %>
+
+                    <%- include('partials/resume') %>
+
+                        <%- include('partials/portfolio') %>
+
+                            <%- include('partials/blog') %>
+
+                                <%- include('partials/contact') %>
+
+    </main>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="/script.js"></script>
+</body>
+
+</html>
