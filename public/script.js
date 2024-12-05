@@ -158,3 +158,10 @@ eyeIcons.forEach(icon => {
         openFullScreen(projectImage.src);
     });
 });
+
+
+
+
+
+
+
