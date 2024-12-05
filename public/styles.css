@@ -393,9 +393,9 @@ article { display: none; }
 
     .about-text p { 
         margin-bottom: 15px;
-        text-align: justify;
+        /* text-align: justify; */
         padding-left: 10px;
-        padding-right: 10px;
+        padding-right: 5px;
      }
 
 .service { margin-bottom: 35px; }
@@ -685,7 +685,7 @@ article { display: none; }
     color: var(--light-gray);
     font-weight: var(--fw300);
     line-height: 1.6;
-    text-align: justify;
+    /* text-align: justify; */
 }
 
 /*SKILLS*/
@@ -985,7 +985,7 @@ article { display: none; }
     font-size: var(--fs6);
     font-weight: var(--fw300);
     line-height: 1.6;
-    text-align: justify;
+    /* text-align: justify; */
 }
 
 /*CONTACT*/
