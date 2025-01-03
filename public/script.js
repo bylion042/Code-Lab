@@ -159,9 +159,3 @@ eyeIcons.forEach(icon => {
     });
 });
 
-
-
-
-
-
-
