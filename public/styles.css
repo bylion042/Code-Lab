@@ -603,15 +603,16 @@ article { display: none; }
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 15px;
+    gap: 0px;
     margin: 0 -15px;
     padding: 25px;
-    padding-bottom: 25px;
+    padding-bottom: 10px;
     overflow-x: auto;
     scroll-behavior: smooth;
     overscroll-behavior-inline: contain;
     scroll-snap-type: inline mandatory;
     scroll-padding-inline: 25px;
+    cursor: pointer;
 }
 
 .clients-item {
@@ -620,7 +621,7 @@ article { display: none; }
 }
 
     .clients-item img {
-        width: 100%;
+        width: 80%;
         filter: grayscale(1);
         transition: var(--transition1);
     }
@@ -986,7 +987,7 @@ article { display: none; }
     font-size: var(--fs6);
     font-weight: var(--fw300);
     line-height: 1.6;
-    /* text-align: justify; */
+    /* text-align: center; */
 }
 
 /*CONTACT*/
