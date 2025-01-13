@@ -27,7 +27,7 @@ app.post('/send-message', async (req, res) => {
         service: 'gmail',
         auth: {
             user: 'codelab042@gmail.com', // Replace with your email
-            pass: 'wyve lqln yeqj rkmq', // Replace with your app password
+            pass: 'wedu buod opfr euti', // Replace with your app password
         },
     });
 
