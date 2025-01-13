@@ -159,3 +159,51 @@ eyeIcons.forEach(icon => {
     });
 });
 
+
+
+
+
+
+// CONTACT TOASTIFY 
+document.getElementById('contactForm').addEventListener('submit', async function (e) {
+    e.preventDefault(); // Prevent the default form submission
+
+    const formData = new FormData(this); // Collect form data
+
+    try {
+        const response = await fetch('/send-message', {
+            method: 'POST',
+            body: formData,
+        });
+
+        const result = await response.json(); // Parse JSON response
+
+        if (response.ok) {
+            // Show success toast
+            Toastify({
+                text: result.message,
+                duration: 3000,
+                close: true,
+                gravity: "top", // Position: top or bottom
+                position: "right", // Align: left, center, or right
+                backgroundColor: "#4CAF50", // Green for success
+            }).showToast();
+
+            // Optionally reset the form
+            this.reset();
+        } else {
+            throw new Error(result.message || 'Failed to send message.');
+        }
+    } catch (error) {
+        // Show error toast
+        Toastify({
+            text: error.message,
+            duration: 5000,
+            close: true,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "#f44336", // Red for error
+            width: "auto",
+        }).showToast();
+    }
+});
