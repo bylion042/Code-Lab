@@ -168,12 +168,38 @@ eyeIcons.forEach(icon => {
 document.getElementById('contactForm').addEventListener('submit', async function (e) {
     e.preventDefault(); // Prevent the default form submission
 
-    const formData = new FormData(this); // Collect form data
+    // Get the values from the form fields
+    const fullname = document.querySelector('input[name="fullname"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const message = document.querySelector('textarea[name="message"]').value;
+
+    // Check if all the fields are filled
+    if (!fullname || !email || !message) {
+        Toastify({
+            text: "All fields are required!",
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "#f44336", // Red for error
+        }).showToast();
+        return;
+    }
+
+    const data = {
+        fullname: fullname,
+        email: email,
+        message: message
+    };
 
     try {
+        // Send the form data as JSON to the server
         const response = await fetch('/send-message', {
             method: 'POST',
-            body: formData,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
         });
 
         const result = await response.json(); // Parse JSON response
@@ -184,8 +210,8 @@ document.getElementById('contactForm').addEventListener('submit', async function
                 text: result.message,
                 duration: 3000,
                 close: true,
-                gravity: "top", // Position: top or bottom
-                position: "right", // Align: left, center, or right
+                gravity: "top",
+                position: "right",
                 backgroundColor: "#4CAF50", // Green for success
             }).showToast();
 
